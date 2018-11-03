@@ -96,9 +96,9 @@ def exercise06():
 def exercise07():
     # Create a variable wage and assign 17.0 to it. Print to the screen the datatype of wage. Create a second variable called doubled that prints to the screen 2 times wage
     # ------ Place code below here \/ \/ \/ ------
-    wage=17
+    wage=17.0
     print(type(wage))
-    doubled=2*int(wage)
+    doubled= 2 * float(wage)
     # ------ Place code above here /\ /\ /\ ------
     return wage, doubled
 
@@ -136,7 +136,7 @@ def exercise10():
     factor3 = 3
     factor4 = 4
     factor5 = 5
-    product = factor1 * factor2 * factor3 * factor4
+    product = factor1 * factor2 * factor3 * factor4 *factor5
     # ------ Place code above here /\ /\ /\ ------
 
     return factor1, factor2, factor3, factor4, factor5, product
@@ -147,8 +147,8 @@ def exercise11():
 
     # ------ Place code below here \/ \/ \/ ------
     import math
-    pi=round(math.pi,10)
-    print(pi)
+    pi= math.floor(math.pi * 10 ** 10) / 10 ** 10
+    
     # ------ Place code above here /\ /\ /\ ------
     return pi
 
@@ -168,7 +168,7 @@ def exercise13():
     
     # ------ Place code below here \/ \/ \/ ------
     import math
-    pi=math.pi
+    pi=round(math.pi,5)
     r=7
     volume_sphere=4/3* pi *pow(r,3)
 
