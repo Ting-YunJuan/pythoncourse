@@ -22,7 +22,7 @@ def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
-
+    animals=['cat','dog','crouching tiger','hidden dragon', 'manta ray']
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -33,8 +33,10 @@ def exercise02():
     # Repeat exercise 1 and loop through and print each item in the animal list by iterating through an index number and using range(). Set the variable len_animals to the length of the animal list.
 
     # ------ Place code below here \/ \/ \/ ------
-
-
+    animals=['cat','dog','crouching tiger','hidden dragon', 'manta ray']
+    for num in range(0,5):
+     print(animals[num])
+    len_animals=animals
     # ------ Place code above here /\ /\ /\ ------
 
     return animals, len_animals
@@ -46,8 +48,11 @@ def exercise03():
     the_fifth_element = -999
 
     # ------ Place code below here \/ \/ \/ ------
-
-
+    countdown = [9, 8, 7, 5, 4, 2, 1, 6, 10, 3, 0, -5]
+    the_fifth_element = -999
+    countdown.sort()
+    countdown.reverse()
+    countdown[4]=the_fifth_element
     # ------ Place code above here /\ /\ /\ ------
 
     return countdown, the_fifth_element
@@ -69,9 +74,17 @@ def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
     copy_of_samples = []
 
     # ------ Place code below here \/ \/ \/ ------
-
-
-
+    for n in range(0,25):
+       temperatures.append(more_temperatures[n]) 
+    for x in range(0,10):
+        temperatures.append(iot_sensor_points[x])
+    temperatures.extend([a,b,c,d,e])
+    temperatures.sort()
+    temperatures.reverse()
+    for n in range(4,len(temperatures),5):
+        samples.append(temperatures[n])
+    copy_of_samples=samples
+    samples=sorted(samples)
     # ------ Place code above here /\ /\ /\ ------
 
     return samples, temperatures, more_temperatures, iot_sensor_points, a, b, c, d, e, copy_of_samples
@@ -81,6 +94,13 @@ def exercise05(n):
     # This function will find n factorial using recursion (calling itself) and return the solution. For example exercise05(5) will return 120. No Python functions are to be used.
 
     # ------ Place code below here \/ \/ \/ ------
+    def exercise(n):
+     if n >= 0:
+      if n == 1 or n==0:
+       return 1
+      else:
+       n = n * exercise(n-1)
+       return n
 
     pass # Remove this line
 
@@ -91,8 +111,9 @@ def exercise06(n):
      # This function will receive an arbitrary list of numbers of arbitrary size and find the average of those numbers. The size of the list may vary. Find the method that requires the  least amount of code. Return back the length, sum of list and average of list
 
     # ------ Place code below here \/ \/ \/ ------
-
-
+    length_n=len(n)
+    sum_n=sum(n)
+    average_n=sum_n/length_n
     # ------ Place code above here /\ /\ /\ ------
     return length_n, sum_n, average_n
 
@@ -101,6 +122,13 @@ def exercise07(n):
     # This function looks for duplicates in list n. If there is a duplicate False is returned. If there are no duplicates True is returned.
 
     # ------ Place code below here \/ \/ \/ ------
+    dupes = [x for a, x in enumerate(n) if x in n[:a]]
+ 
+    if dupes:
+     print(False)
+    else:
+     print(True)
+
 
 
     # ------ Place code above here /\ /\ /\ ------
@@ -117,6 +145,11 @@ def exercise07(n):
 # 8. The menu options should repeatedly be displayed after each selection (and appropriate delegate function is called) until user selects exist
 
 # ------ Place code below here \/ \/ \/ ------
+def display_menu(menu):
+    if type(display_menu )!= "tuple":
+        return -1
+
+
 
 
 
@@ -131,9 +164,10 @@ def exercise09():
     print(str(dog_media.content))
     
     # ------ Place code below here \/ \/ \/ ------
+    for n in range(0,9):
+        dogs.append(str(dog_media.content))
+        dog_media=r.get(url=url)
     
-
-
     # ------ Place code above here /\ /\ /\ ------
 
     return dogs
@@ -144,7 +178,11 @@ def exercise10(sentence):
     reversed = ''
 
     # ------ Place code below here \/ \/ \/ ------
-    
+    for i in range(len(sentence) - 1, -1, -1):
+     if reversed[i] == " ":
+        print("_")
+     else:
+        print(reversed[i])
 
 
     # ------ Place code above here /\ /\ /\ ------
