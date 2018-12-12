@@ -208,7 +208,9 @@ class Block:
         return self.__merkle_tx_hash
     
     def get_values(self):
-       return self.__transactions['Value'].tolist()
+       print(self.__transactions['Value'])
+       return self.__transactions['Value']
+       
 
 class TestAssignment4(unittest.TestCase):
     def test_chain(self):
